@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<code-config>
+
+    <code-usage>
+        <statement>
+            <subject>Include / Require</subject>
+            <info>
+                Use always require, never: include, include_once, require_once
+            </info>
+        </statement>
+
+        <statement>
+            <subject>Class names</subject>
+            <info>
+                The classes has to be called: classname.class.php
+                The interfaces has to be called: interfacename.interface.php
+            </info>
+        </statement>
+
+        <statement>
+            <subject>Class Constructor</subject>
+            <info>All classes must have a default __constructor __destruct</info>
+            <code>
+                public function __construct()
+                {
+                    //code
+                }
+            </code>
+        </statement>
+
+        <statement>
+            <subject>Brace Style</subject>
+            <info>Braces do go on their own line. So:</info>
+            <code>
+                public mxp_function($parameter)
+                {
+                    if (something)
+                    {
+                        // ...
+                    }
+                    else if (somethingElse)
+                    {
+                        // ...
+                    }
+                    else
+                    {
+                        // ...
+                    }
+                }
+            </code>
+            <info>We require braces around the statements for a conditional.</info>
+            <code>
+                This is right:
+
+                if (condition)
+                {
+                    body();
+                }
+
+                This is wrong:
+                if (condition)
+                    body();
+            </code>
+        </statement>
+
+        <statement>
+            <subject>Use @TODO Comments</subject>
+            <info>TODOs should include the string @TODO in all caps, followed by a colon:</info>
+            <code>
+                // @TODO: Remove this code after the function has been checked in.
+                // @BUG: resolve bug asap
+            </code>
+        </statement>
+    </code-usage>
+
+    <NewPhpFile>
+        <info>This code should be available in all files</info>
+        <comment>
+            /**
+            * Company.com, v 1.0.0, Tue 05 Aug 2014 14:34:56
+            *
+            * Company.com, Web application company
+            * http://www.comapny.com
+            *
+            * Copyright (c) 2014 Krisil, Co.
+            * All right reserved.
+            *
+            * Date : DD MMM YYYY
+            */
+        </comment>
+    </NewPhpFile>
+
+    <class>
+        <comment>
+            /**
+            * Class [ClassName]
+            * Brief [purpose]
+            *
+            * @param [paramd] : [description]
+            * @author <a href="mailto: mail@Company.com">name</a>
+            * @copyright Krisil, Co., 02-08-2014
+            *
+            * Date : [DD-MMM-YYYY]
+            **/
+        </comment>
+        <code-style>
+            if (!defined('SAMPLECLASS_PHP_CLASS'))
+            {
+                define ('SAMPLECLASS_PHP_CLASS', 1);
+                class SampleClass extends FooAbstract implements BarInterface
+                {
+
+                }
+            }
+        </code-style>
+    </class>
+
+    <constructor>
+        <comment>
+            /**
+            * Constructor
+            * Brief [purpose]
+            *
+            * @author <a href="mailto: mail@Company.com">name</a>
+            **/
+        </comment>
+    </constructor>
+
+    <function>
+        <comment>
+                /**
+                * Function [FunctionName]
+                * Brief [purpose]
+                * Date created: [DD-MM-YYYY]
+                *
+                * @access [public, protected, private, static]
+                * @param (type) name - Param description
+                * @return (type) - Return description
+                * @author <a href="mailto: mail@Company.com">name</a>
+                **/
+        </comment>
+    </function>
+
+</code-config>

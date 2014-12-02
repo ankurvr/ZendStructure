@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html class="paceSimple sidebar sidebar-fusion">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <script>
+            var site_url = '<?=SITE_URL?>';
+            var _jsSiteUrl = '<?=SITE_URL; ?>';
+            var asset_path = '<?=ASSET_PATH;?>';
+            var image_path = '<?=IMAGE_PATH?>';
+            var Lang = '<?=$this->Lang; ?>';
+            var error_Msg = '<?=$this->Translate('Error', $this->Lang);?>';
+            var success_Msg = '<?=$this->Translate('Success', $this->Lang);?>';
+            var information_Msg = '<?=$this->Translate('Information', $this->Lang);?>';
+            var warning_Msg = '<?=$this->Translate('Warning', $this->Lang);?>';
+        </script>
+    </head>
+    <body class="scripts-async">
+
+		<div id="middle_content_body">
+			<!-- Middle Content from controller -->
+			<?php echo $this->layout()->content; ?>
+			<!-- Middle Content end here ...  -->
+		</div>
+    </body>
+</html>

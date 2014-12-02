@@ -25,5 +25,7 @@
 	 *  Constant variables for database tables name 
 	 * 	@var String
 	 */
-	
-	define('TABLE_ADMINISTRATOR_LOG', cryptSwTable('administrator_log'));
+
+	define('TABLE_PROJECTS', cryptSwTable('projects'));
+
+	/*print_r(get_defined_constants(true));die;*/

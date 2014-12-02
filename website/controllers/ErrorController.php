@@ -1,5 +1,26 @@
 <?php
 
+    /**
+     * Company.com, v 1.0.0, Tue 05 Aug 2014 14:34:56
+     *
+     * Company.com, Web application company
+     * http://www.Company.com
+     *
+     * Copyright (c) 2014 Krisil, Co.
+     * All right reserved.
+     *
+     * Date : 04 Aug 2014
+     */
+
+    /**
+     * Class ErrorController
+     * Brief Handle errors through Zend
+     *
+     * @author <a href="mailto: ankur@Company.com">Ankur Raiyani</a>
+     * @copyright Krisil, Co., 02-08-2014
+     *
+     * Date : 04-08-2014
+     **/
     class ErrorController extends Zend_Controller_Action
     {
 
@@ -8,6 +29,11 @@
 
             $errors = $this->_getParam('error_handler');
             $this->_helper->viewRenderer->setNoRender(true);
+            if(DEVELOP_VERSION)
+            {
+                echo '<pre>';
+                print_r($errors);die;
+            }
 
             switch ($errors->type) {
 

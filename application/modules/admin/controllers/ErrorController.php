@@ -6,7 +6,13 @@ class Admin_ErrorController extends Zend_Controller_Action
     public function errorAction()
     {
         $errors = $this->_getParam('error_handler');
-        
+
+        if(DEVELOP_VERSION)
+        {
+            echo '<pre>';
+            print_r($errors);die;
+        }
+
         if (!$errors || !$errors instanceof ArrayObject) {
             $this->view->message = 'You have reached the error page';
             return;

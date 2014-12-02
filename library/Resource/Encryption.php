@@ -1,48 +1,52 @@
 <?php 
 
-class Resource_Encryption {
-	
-    var $skey = "PROJECTKEY::04082014::Admin"; // Don't change it
+class Resource_Encryption
+{
+    var $skey = "KrisProjectMgmt::04082014::Ankur"; // Don't change it
 
     // singleton instance
     private static $instance;
     
     // getInstance method
-    public static function getInstance() {
-    
-    	if(!self::$instance) {
+    public static function getInstance()
+    {
+    	if(!self::$instance)
+        {
     		self::$instance = new self();
     	}
-    
-    	return self::$instance;    
+    	return self::$instance;
     }
     
-    public  function safe_b64encode($string) {
+    public  function safe_b64encode($string)
+    {
         $data = base64_encode($string);
         $data = str_replace(array('+','/','='),array('-','_',''),$data);
         return $data;
     }
 
-    public function safe_b64decode($string) {
+    public function safe_b64decode($string)
+    {
         $data = str_replace(array('-','_'),array('+','/'),$string);
         $mod4 = strlen($data) % 4;
-        if ($mod4) {
+        if ($mod4)
+        {
             $data .= substr('====', $mod4);
         }
         return base64_decode($data);
     }
 
-    public static function encodeData($value) {
-
+    public static function encodeData($value)
+    {
     	return Resource_Encryption::getInstance()->encode($value);
     }
     
-    public static function decodeData($value) {
-    
+    public static function decodeData($value)
+    {
     	return Resource_Encryption::getInstance()->decode($value);
     }
     
-    public function encode($value) { 
+    public function encode($value)
+    {
         if(!$value){return false;}
         $text = $value;
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB);
@@ -51,7 +55,8 @@ class Resource_Encryption {
         return trim($this->safe_b64encode($crypttext)); 
     }
 
-    public function decode($value) {
+    public function decode($value)
+    {
         if(!$value){return false;}
         $crypttext = $this->safe_b64decode($value); 
         $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB);

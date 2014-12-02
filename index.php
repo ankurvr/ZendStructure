@@ -66,7 +66,7 @@
 
     if (!defined("TEMPLATE_ASSET_PATH"))  define("TEMPLATE_ASSET_PATH", SITE_URL . "public/assets");
 
-    if (!defined("EP"))  define("EP", "/var/log/error_project_name.log");
+    if (!defined("EP"))  define("EP", "/var/log/error_pmanagement.html");
 
 
 #==================================================================================

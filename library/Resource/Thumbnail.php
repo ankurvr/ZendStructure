@@ -6,7 +6,7 @@
  *
  * Date created: 2011-09-13
  *
- * @category	Puvoo
+ * @category	Graphics
  * @package 	Resource Library
  * @author	    Ankur Raiyani
  */  
